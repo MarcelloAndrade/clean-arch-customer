@@ -25,4 +25,8 @@ public class PageRequest {
     public void setSize(Integer size) {
         this.size = size;
     }
+
+    public Integer offset() {
+        return page * size;
+    }
 }

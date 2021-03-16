@@ -2,7 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
         <artifactId>customer-parent</artifactId>
         <groupId>br.com.mhfa</groupId>
@@ -11,8 +10,18 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>customer-domain</artifactId>
-    <description>Business Domain</description>
+    <artifactId>customer-api</artifactId>
+    <description>Controllers</description>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>br.com.mhfa</groupId>
+            <artifactId>customer-application</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+    </dependencies>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

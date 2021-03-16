@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=clean-arch-customer
+      - MYSQL_ROOT_PASSWORD=clean-arch
+    ports:
+      - 3306:3306
+    networks:
+      - custom
+
+  stubby4j:
+    image: marcelloandrade/stubby4j-docker
+    ports:
+      - 8081:8081
+    environment:
+      STUBBY_PORT: 8081
+      # YAML_CONFIG:
+    volumes:
+      - ./data/stubby/integrations.yml:/usr/local/stubby.yml
+    networks:
+      - custom
+
+networks:
+  custom:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.165.70.0/16
